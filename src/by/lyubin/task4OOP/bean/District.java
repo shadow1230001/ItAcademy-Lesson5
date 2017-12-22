@@ -1,5 +1,7 @@
 package by.lyubin.task4OOP.bean;
 
+import java.util.Arrays;
+
 public class District {
     private String name;
     private String regionCenter;
@@ -71,6 +73,45 @@ public class District {
         for (City city : this.cities) {
             System.out.print(city.getName() + " ");
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        District district = (District) o;
+
+        if (Double.compare(district.area, area) != 0) return false;
+        if (cityCounter != district.cityCounter) return false;
+        if (name != null ? !name.equals(district.name) : district.name != null) return false;
+        if (regionCenter != null ? !regionCenter.equals(district.regionCenter) : district.regionCenter != null)
+            return false;
+        return Arrays.equals(cities, district.cities);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (regionCenter != null ? regionCenter.hashCode() : 0);
+        temp = Double.doubleToLongBits(area);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + Arrays.hashCode(cities);
+        result = 31 * result + cityCounter;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "District{" +
+                "name='" + name + '\'' +
+                ", regionCenter='" + regionCenter + '\'' +
+                ", area=" + area +
+                ", cities=" + Arrays.toString(cities) +
+                ", cityCounter=" + cityCounter +
+                '}';
     }
 }
 

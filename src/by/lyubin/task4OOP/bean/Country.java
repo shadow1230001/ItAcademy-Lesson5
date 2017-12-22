@@ -1,5 +1,7 @@
 package by.lyubin.task4OOP.bean;
 
+import java.util.Arrays;
+
 public class Country {
     private String name;
     private String capital;
@@ -84,5 +86,41 @@ public class Country {
         }
 
         return totalArea;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Country country = (Country) o;
+
+        if (numberOfRegions != country.numberOfRegions) return false;
+        if (regionCounter != country.regionCounter) return false;
+        if (name != null ? !name.equals(country.name) : country.name != null) return false;
+        if (capital != null ? !capital.equals(country.capital) : country.capital != null) return false;
+
+        return Arrays.equals(districts, country.districts);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (capital != null ? capital.hashCode() : 0);
+        result = 31 * result + Arrays.hashCode(districts);
+        result = 31 * result + numberOfRegions;
+        result = 31 * result + regionCounter;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "name='" + name + '\'' +
+                ", capital='" + capital + '\'' +
+                ", districts=" + Arrays.toString(districts) +
+                ", numberOfRegions=" + numberOfRegions +
+                ", regionCounter=" + regionCounter +
+                '}';
     }
 }
