@@ -1,4 +1,4 @@
-package by.lyubin.task4OOP.bean.runner;
+package by.lyubin.task4OOP.runner;
 
 import by.lyubin.task4OOP.bean.City;
 import by.lyubin.task4OOP.bean.District;

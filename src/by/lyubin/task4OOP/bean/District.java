@@ -83,9 +83,7 @@ public class District {
         District district = (District) o;
 
         if (Double.compare(district.area, area) != 0) return false;
-        if (cityCounter != district.cityCounter) return false;
-        if (name != null ? !name.equals(district.name) : district.name != null) return false;
-        return (districtCenter != null ? districtCenter.equals(district.districtCenter) : district.districtCenter == null) && Arrays.equals(cities, district.cities);
+        return cityCounter == district.cityCounter && (name != null ? name.equals(district.name) : district.name == null) && (districtCenter != null ? districtCenter.equals(district.districtCenter) : district.districtCenter == null) && Arrays.equals(cities, district.cities);
     }
 
     @Override

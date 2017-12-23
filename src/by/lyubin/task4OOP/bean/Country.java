@@ -58,7 +58,7 @@ public class Country {
         return " Area of " + this.name + " is " + area + " sqrt km ";
     }
 
-    public void addDistrict(District district) {
+    public void addDistrict(District district) {  //сделать проверку на null
         if (districtCounter < districts.length) {
             districts[districtCounter] = district;
             districtCounter++;
