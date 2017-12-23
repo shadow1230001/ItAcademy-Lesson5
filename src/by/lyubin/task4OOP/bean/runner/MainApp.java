@@ -42,13 +42,13 @@ public class MainApp {
 
         Country country = new Country(" RB ", "Minsk", 6);
 
-        country.addDistict(district1);
-        country.addDistict(district2);
-        country.addDistict(district3);
-        country.addDistict(district4);
-        country.addDistict(district5);
-        country.addDistict(district6);
-        country.addDistict(district7);
+        country.addDistrict(district1);
+        country.addDistrict(district2);
+        country.addDistrict(district3);
+        country.addDistrict(district4);
+        country.addDistrict(district5);
+        country.addDistrict(district6);
+        country.addDistrict(district7);
 
         country.showDistricts();
 

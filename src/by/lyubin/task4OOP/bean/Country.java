@@ -58,7 +58,7 @@ public class Country {
         return " Area of " + this.name + " is " + area + " sqrt km ";
     }
 
-    public void addDistict(District district) {
+    public void addDistrict(District district) {
         if (districtCounter < districts.length) {
             districts[districtCounter] = district;
             districtCounter++;
