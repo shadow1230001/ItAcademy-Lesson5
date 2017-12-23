@@ -50,11 +50,11 @@ public class Country {
     }
 
     private double getArea() {
-        return calcAreaOfRegions();
+        return regionsCalcArea();
     }
 
     public String showArea() {
-        double area = calcAreaOfRegions();
+        double area = regionsCalcArea();
         return " Area of " + this.name + " is " + area + " sqrt km ";
     }
 
@@ -78,7 +78,7 @@ public class Country {
         System.out.format("%-15s %15s %25s %n", "", "", "Total: " + getArea());
     }
 
-    private double calcAreaOfRegions() {
+    private double regionsCalcArea() {
         double totalArea = 0;
 
         for (District district : districts) {
