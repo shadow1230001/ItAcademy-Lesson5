@@ -79,13 +79,13 @@ public class Country {
     }
 
     private double districtCalcArea() {
-        double totalArea = 0;
+        double total = 0;
 
         for (District district : districts) {
-            totalArea += district.getArea();
+            total += district.getArea();
         }
 
-        return totalArea;
+        return total;
     }
 
     @Override
