@@ -7,10 +7,10 @@ import by.lyubin.task4OOP.bean.Country;
 public class MainApp {
     public static void main(String[] args) {
 
-        District district1 = new District("Brestskij", "Brest", 32.8, 3);
+        District district1 = new District("Brestskij", "Brest", 54.8, 3);
         District district2 = new District("Vitebskij", "Vitebsk", 40.0, 3);
         District district3 = new District("Gomelskij", "Gomel", 40.4, 3);
-        District district4 = new District("Grodnenskij", "Grodno", 25.1, 3);
+        District district4 = new District("Grodnenskij", "Grodno", 20.1, 3);
         District district5 = new District("Minsk", "Minsk", 0.3, 0);
         District district6 = new District("Minskij", "Minsk", 39.9, 3);
         District district7 = new District("Mogilevskij", "Mogilev", 29.1, 3);

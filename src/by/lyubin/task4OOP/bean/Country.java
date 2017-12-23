@@ -6,15 +6,15 @@ public class Country {
     private String name;
     private String capital;
     private District[] districts;
-    private int numberOfRegions;
+    private int regionNumbers;
 
     private int regionCounter = 0;
 
-    public Country(String name, String capital, int numberOfRegions) {
+    public Country(String name, String capital, int regionNumbers) {
         this.name = name;
         this.capital = capital;
-        this.numberOfRegions = numberOfRegions;
-        this.districts = new District[numberOfRegions];
+        this.regionNumbers = regionNumbers;
+        this.districts = new District[regionNumbers];
     }
 
     public String getName() {
@@ -42,11 +42,11 @@ public class Country {
     }
 
     public int getNumberOfRegions() {
-        return numberOfRegions;
+        return regionNumbers;
     }
 
     public void setNumberOfRegions(int numberOfRegions) {
-        this.numberOfRegions = numberOfRegions;
+        this.regionNumbers = numberOfRegions;
     }
 
     private double getArea() {
@@ -95,7 +95,7 @@ public class Country {
 
         Country country = (Country) o;
 
-        if (numberOfRegions != country.numberOfRegions) return false;
+        if (regionNumbers != country.regionNumbers) return false;
         if (regionCounter != country.regionCounter) return false;
         if (name != null ? !name.equals(country.name) : country.name != null) return false;
         if (capital != null ? !capital.equals(country.capital) : country.capital != null) return false;
@@ -108,7 +108,7 @@ public class Country {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (capital != null ? capital.hashCode() : 0);
         result = 31 * result + Arrays.hashCode(districts);
-        result = 31 * result + numberOfRegions;
+        result = 31 * result + regionNumbers;
         result = 31 * result + regionCounter;
         return result;
     }
@@ -119,7 +119,7 @@ public class Country {
                 "name='" + name + '\'' +
                 ", capital='" + capital + '\'' +
                 ", districts=" + Arrays.toString(districts) +
-                ", numberOfRegions=" + numberOfRegions +
+                ", numberOfRegions=" + regionNumbers +
                 ", regionCounter=" + regionCounter +
                 '}';
     }
