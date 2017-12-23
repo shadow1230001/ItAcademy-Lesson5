@@ -39,7 +39,7 @@ public class MainApp {
         district7.addCity(new City("Bihov"));
         district7.addCity(new City("Gorki"));
 
-        Country country = new Country("Republic of Belarus", "Minsk", 7);
+        Country country = new Country(" RB ", "Minsk", 6);
 
         country.addRegion(district1);
         country.addRegion(district2);
