@@ -7,6 +7,7 @@ import by.lyubin.task4OOP.bean.Country;
 public class MainApp {
     public static void main(String[] args) {
 
+
         District district1 = new District("Brestskij", "Brest", 54.8, 3);
         District district2 = new District("Vitebskij", "Vitebsk", 40.0, 3);
         District district3 = new District("Gomelskij", "Gomel", 40.4, 3);
@@ -41,15 +42,15 @@ public class MainApp {
 
         Country country = new Country(" RB ", "Minsk", 6);
 
-        country.addRegion(district1);
-        country.addRegion(district2);
-        country.addRegion(district3);
-        country.addRegion(district4);
-        country.addRegion(district5);
-        country.addRegion(district6);
-        country.addRegion(district7);
+        country.addDistict(district1);
+        country.addDistict(district2);
+        country.addDistict(district3);
+        country.addDistict(district4);
+        country.addDistict(district5);
+        country.addDistict(district6);
+        country.addDistict(district7);
 
-        country.showRegions();
+        country.showDistricts();
 
         district1.showCities();
         System.out.println();

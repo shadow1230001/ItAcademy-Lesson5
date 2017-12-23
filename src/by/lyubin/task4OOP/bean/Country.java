@@ -6,15 +6,15 @@ public class Country {
     private String name;
     private String capital;
     private District[] districts;
-    private int regionNumbers;
+    private int districtNumbers;
 
-    private int regionCounter = 0;
+    private int districtCounter = 0;
 
-    public Country(String name, String capital, int regionNumbers) {
+    public Country(String name, String capital, int districtNumbers) {
         this.name = name;
         this.capital = capital;
-        this.regionNumbers = regionNumbers;
-        this.districts = new District[regionNumbers];
+        this.districtNumbers = districtNumbers;
+        this.districts = new District[districtNumbers];
     }
 
     public String getName() {
@@ -42,43 +42,43 @@ public class Country {
     }
 
     public int getNumberOfRegions() {
-        return regionNumbers;
+        return districtNumbers;
     }
 
     public void setNumberOfRegions(int numberOfRegions) {
-        this.regionNumbers = numberOfRegions;
+        this.districtNumbers = numberOfRegions;
     }
 
     private double getArea() {
-        return regionsCalcArea();
+        return districtCalcArea();
     }
 
     public String showArea() {
-        double area = regionsCalcArea();
+        double area = districtCalcArea();
         return " Area of " + this.name + " is " + area + " sqrt km ";
     }
 
-    public void addRegion(District district) {
-        if (regionCounter < districts.length) {
-            districts[regionCounter] = district;
-            regionCounter++;
+    public void addDistict(District district) {
+        if (districtCounter < districts.length) {
+            districts[districtCounter] = district;
+            districtCounter++;
         } else {
             System.out.println("You can add only " + districts.length + " districts");
         }
 
     }
 
-    public void showRegions() {
+    public void showDistricts() {
         System.out.format("%-15s %15s %25s %n", "District", "District center", "Area, thsds.sqrt km");
 
         for (District district : districts) {
-            System.out.format("%-15s %15s %25s %n", district.getName(), district.getRegionCenter(), district.getArea());
+            System.out.format("%-15s %15s %25s %n", district.getName(), district.getDistrictCenter(), district.getArea());
         }
 
         System.out.format("%-15s %15s %25s %n", "", "", "Total: " + getArea());
     }
 
-    private double regionsCalcArea() {
+    private double districtCalcArea() {
         double totalArea = 0;
 
         for (District district : districts) {
@@ -95,8 +95,8 @@ public class Country {
 
         Country country = (Country) o;
 
-        if (regionNumbers != country.regionNumbers) return false;
-        if (regionCounter != country.regionCounter) return false;
+        if (districtNumbers != country.districtNumbers) return false;
+        if (districtCounter != country.districtCounter) return false;
         if (name != null ? !name.equals(country.name) : country.name != null) return false;
         if (capital != null ? !capital.equals(country.capital) : country.capital != null) return false;
 
@@ -108,8 +108,8 @@ public class Country {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (capital != null ? capital.hashCode() : 0);
         result = 31 * result + Arrays.hashCode(districts);
-        result = 31 * result + regionNumbers;
-        result = 31 * result + regionCounter;
+        result = 31 * result + districtNumbers;
+        result = 31 * result + districtCounter;
         return result;
     }
 
@@ -119,8 +119,8 @@ public class Country {
                 "name='" + name + '\'' +
                 ", capital='" + capital + '\'' +
                 ", districts=" + Arrays.toString(districts) +
-                ", numberOfRegions=" + regionNumbers +
-                ", regionCounter=" + regionCounter +
+                ", numberOfRegions=" + districtNumbers +
+                ", districtCounter=" + districtCounter +
                 '}';
     }
 }

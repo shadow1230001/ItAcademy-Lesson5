@@ -4,15 +4,15 @@ import java.util.Arrays;
 
 public class District {
     private String name;
-    private String regionCenter;
+    private String districtCenter;
     private double area;
     private City[] cities;
 
     private int cityCounter = 0;
 
-    public District(String name, String regionCenter, double area, int numOfCities) {
+    public District(String name, String districtCenter, double area, int numOfCities) {
         this.name = name;
-        this.regionCenter = regionCenter;
+        this.districtCenter = districtCenter;
         this.area = area;
         cities = new City[numOfCities];
     }
@@ -25,12 +25,12 @@ public class District {
         this.name = name;
     }
 
-    String getRegionCenter() {
-        return regionCenter;
+    String getDistrictCenter() {
+        return districtCenter;
     }
 
-    public void setRegionCenter(String regionCenter) {
-        this.regionCenter = regionCenter;
+    public void setDistrictCenter(String districtCenter) {
+        this.districtCenter = districtCenter;
     }
 
     double getArea() {
@@ -85,7 +85,7 @@ public class District {
         if (Double.compare(district.area, area) != 0) return false;
         if (cityCounter != district.cityCounter) return false;
         if (name != null ? !name.equals(district.name) : district.name != null) return false;
-        if (regionCenter != null ? !regionCenter.equals(district.regionCenter) : district.regionCenter != null)
+        if (districtCenter != null ? !districtCenter.equals(district.districtCenter) : district.districtCenter != null)
             return false;
         return Arrays.equals(cities, district.cities);
     }
@@ -95,7 +95,7 @@ public class District {
         int result;
         long temp;
         result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (regionCenter != null ? regionCenter.hashCode() : 0);
+        result = 31 * result + (districtCenter != null ? districtCenter.hashCode() : 0);
         temp = Double.doubleToLongBits(area);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + Arrays.hashCode(cities);
@@ -107,7 +107,7 @@ public class District {
     public String toString() {
         return "District{" +
                 "name='" + name + '\'' +
-                ", regionCenter='" + regionCenter + '\'' +
+                ", districtCenter='" + districtCenter + '\'' +
                 ", area=" + area +
                 ", cities=" + Arrays.toString(cities) +
                 ", cityCounter=" + cityCounter +
