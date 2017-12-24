@@ -4,43 +4,48 @@ import by.lyubin.task4OOP.bean.City;
 import by.lyubin.task4OOP.bean.District;
 import by.lyubin.task4OOP.bean.Country;
 
+import static by.lyubin.task4OOP.constant.CityConstant.*;
+import static by.lyubin.task4OOP.constant.CoutryConstant.*;
+import static by.lyubin.task4OOP.constant.DistrictConstant.*;
+
+
 public class MainApp {
+
     public static void main(String[] args) {
 
+        District district1 = new District(DISTRICT_BRESRSKIY, DISTRICT_CENTER_BREST, DISTRICT_AREA_BREST, DISTRICT_NUMBER_CITY);
+        District district2 = new District(DISTRICT_VITEBSKIY, DISTRICT_CENTER_VITEBSK, DISTRICT_AREA_VITEBSK, DISTRICT_NUMBER_CITY);
+        District district3 = new District(DISTRICT_GOMELSKIY, DISTRICT_CENTER_GOMEL, DISTRICT_AREA_GOMEL, DISTRICT_NUMBER_CITY);
+        District district4 = new District(DISTRICT_GRODNENSKIY, DISTRICT_CENTER_GRODNO, DISTRICT_AREA_GRODNO, DISTRICT_NUMBER_CITY);
+        District district5 = new District(DISTRICT_MINSK, DISTRICT_CENTER_MINSKI, DISTRICT_AREA_MINSKI, DISTRICT_NUMBER_CITY_MINSK);
+        District district6 = new District(DISTRICT_MINSKIY, DISTRICT_CENTER_MINSK, DISTRICT_AREA_MINSK, DISTRICT_NUMBER_CITY);
+        District district7 = new District(DISTRICT_MOGILEVSKIY, DISTRICT_CENTER_MOGILEV, DISTRICT_AREA_MOGILEV, DISTRICT_NUMBER_CITY);
 
-        District district1 = new District("Brestskij", "Brest", 54.8, 3);
-        District district2 = new District("Vitebskij", "Vitebsk", 40.0, 3);
-        District district3 = new District("Gomelskij", "Gomel", 40.4, 3);
-        District district4 = new District("Grodnenskij", "Grodno", 20.1, 3);
-        District district5 = new District("Minsk", "Minsk", 0.3, 0);
-        District district6 = new District("Minskij", "Minsk", 39.9, 3);
-        District district7 = new District("Mogilevskij", "Mogilev", 29.1, 3);
+        district1.addCity(new City(CITY_BREST));
+        district1.addCity(new City(CITY_BARANOVICHI));
+        district1.addCity(new City(CITY_BEREZA));
 
-        district1.addCity(new City("Brest"));
-        district1.addCity(new City("Baranovichi"));
-        district1.addCity(new City("Bereza"));
+        district2.addCity(new City(CITY_VITEBSK));
+        district2.addCity(new City(CITY_BESHENKOVICHI));
+        district2.addCity(new City(CITY_BRASLAV));
 
-        district2.addCity(new City("Vitebsk"));
-        district2.addCity(new City("Beshenkovichi"));
-        district2.addCity(new City("Braslav"));
+        district3.addCity(new City(CITY_GOMEL));
+        district3.addCity(new City(CITY_JLOBIN));
+        district3.addCity(new City(CITY_JITKOVICHI));
 
-        district3.addCity(new City("Gomel"));
-        district3.addCity(new City("Jlobin"));
-        district3.addCity(new City("Jitkovichi"));
+        district4.addCity(new City(CITY_GRODNO));
+        district4.addCity(new City(CITY_VOLKOVISK));
+        district4.addCity(new City(CITY_IVIE));
 
-        district4.addCity(new City("Grodno"));
-        district4.addCity(new City("Volkovisk"));
-        district4.addCity(new City("Ivie"));
+        district6.addCity(new City(CITY_MINSK));
+        district6.addCity(new City(CITY_VOLOJIN));
+        district6.addCity(new City(CITY_DZERJINSK));
 
-        district6.addCity(new City("Minsk"));
-        district6.addCity(new City("Volojin"));
-        district6.addCity(new City("Dzerjinsk"));
+        district7.addCity(new City(CITY_MOGILEV));
+        district7.addCity(new City(CITY_BIHOV));
+        district7.addCity(new City(CITY_GORKI));
 
-        district7.addCity(new City("Mogilev"));
-        district7.addCity(new City("Bihov"));
-        district7.addCity(new City("Gorki"));
-
-        Country country = new Country(" RB ", "Minsk", 6);
+        Country country = new Country(COUTRY_NAME, CAPTITAL_COUNTRY, DISTRICT_NUMBER);
 
         country.addDistrict(district1);
         country.addDistrict(district2);
