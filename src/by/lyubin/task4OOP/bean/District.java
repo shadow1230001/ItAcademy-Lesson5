@@ -17,7 +17,7 @@ public class District {
         cities = new City[numOfCities];
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
@@ -33,7 +33,7 @@ public class District {
         this.districtCenter = districtCenter;
     }
 
-    double getArea() {
+    public double getArea() {
         return area;
     }
 
@@ -55,24 +55,6 @@ public class District {
 
     public void setCityCounter(int cityCounter) {
         this.cityCounter = cityCounter;
-    }
-
-    public void addCity(City city) {
-        if (this.getName().equals("Minsk") && this.cities.length == 0) {
-            System.out.println(" Minsk cannot have any cities inside itsself ");
-        } else if (cityCounter < cities.length) {
-            cities[cityCounter] = city;
-            cityCounter++;
-        } else {
-            System.out.println(" You can add only " + cities.length + " cities ");
-        }
-    }
-
-    public void showCities() {
-        System.out.print("Cities of " + this.name + " region are: ");
-        for (City city : this.cities) {
-            System.out.print(city.getName() + " ");
-        }
     }
 
     @Override

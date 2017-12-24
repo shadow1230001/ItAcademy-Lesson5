@@ -7,7 +7,7 @@ public class City {
         this.name = name;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 

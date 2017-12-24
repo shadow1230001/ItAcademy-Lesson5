@@ -3,6 +3,7 @@ package by.lyubin.task4OOP.runner;
 import by.lyubin.task4OOP.bean.City;
 import by.lyubin.task4OOP.bean.District;
 import by.lyubin.task4OOP.bean.Country;
+import by.lyubin.task4OOP.logic.DistrictService;
 
 import static by.lyubin.task4OOP.constant.CityConstant.*;
 import static by.lyubin.task4OOP.constant.CoutryConstant.*;
@@ -21,29 +22,36 @@ public class MainApp {
         District district6 = new District(DISTRICT_MINSKIY, DISTRICT_CENTER_MINSK, DISTRICT_AREA_MINSK, DISTRICT_NUMBER_CITY);
         District district7 = new District(DISTRICT_MOGILEVSKIY, DISTRICT_CENTER_MOGILEV, DISTRICT_AREA_MOGILEV, DISTRICT_NUMBER_CITY);
 
-        district1.addCity(new City(CITY_BREST));
-        district1.addCity(new City(CITY_BARANOVICHI));
-        district1.addCity(new City(CITY_BEREZA));
+        DistrictService districtService = new DistrictService();
 
-        district2.addCity(new City(CITY_VITEBSK));
-        district2.addCity(new City(CITY_BESHENKOVICHI));
-        district2.addCity(new City(CITY_BRASLAV));
+        districtService.addCity(district1, new City(CITY_BREST));
+        districtService.addCity(district1, new City(CITY_BARANOVICHI));
+        districtService.addCity(district1, new City(CITY_BEREZA));
 
-        district3.addCity(new City(CITY_GOMEL));
-        district3.addCity(new City(CITY_JLOBIN));
-        district3.addCity(new City(CITY_JITKOVICHI));
+        districtService.addCity(district2, new City(CITY_VITEBSK));
+        districtService.addCity(district2, new City(CITY_BESHENKOVICHI));
+        districtService.addCity(district2, new City(CITY_BRASLAV));
 
-        district4.addCity(new City(CITY_GRODNO));
-        district4.addCity(new City(CITY_VOLKOVISK));
-        district4.addCity(new City(CITY_IVIE));
+        districtService.addCity(district3, new City(CITY_GOMEL));
+        districtService.addCity(district3, new City(CITY_JLOBIN));
+        districtService.addCity(district3, new City(CITY_JITKOVICHI));
 
-        district6.addCity(new City(CITY_MINSK));
-        district6.addCity(new City(CITY_VOLOJIN));
-        district6.addCity(new City(CITY_DZERJINSK));
+        districtService.addCity(district4, new City(CITY_GRODNO));
+        districtService.addCity(district4, new City(CITY_VOLKOVISK));
+        districtService.addCity(district4, new City(CITY_IVIE));
 
-        district7.addCity(new City(CITY_MOGILEV));
-        district7.addCity(new City(CITY_BIHOV));
-        district7.addCity(new City(CITY_GORKI));
+        districtService.addCity(district5, new City(CITY_GRODNO));
+        districtService.addCity(district5, new City(CITY_VOLKOVISK));
+        districtService.addCity(district5, new City(CITY_IVIE));
+
+        districtService.addCity(district6, new City(CITY_MINSK));
+        districtService.addCity(district6, new City(CITY_VOLOJIN));
+        districtService.addCity(district6, new City(CITY_DZERJINSK));
+
+        districtService.addCity(district7, new City(CITY_MOGILEV));
+        districtService.addCity(district7, new City(CITY_BIHOV));
+        districtService.addCity(district7, new City(CITY_GORKI));
+
 
         Country country = new Country(COUTRY_NAME, CAPTITAL_COUNTRY, DISTRICT_NUMBER);
 
@@ -57,19 +65,19 @@ public class MainApp {
 
         country.showDistricts();
 
-        district1.showCities();
+        districtService.showCities(district1);
         System.out.println();
-        district2.showCities();
+        districtService.showCities(district2);
         System.out.println();
-        district3.showCities();
+        districtService.showCities(district3);
         System.out.println();
-        district4.showCities();
+        districtService.showCities(district4);
         System.out.println();
-        district5.showCities();
+        districtService.showCities(district5);
         System.out.println();
-        district6.showCities();
+        districtService.showCities(district6);
         System.out.println();
-        district7.showCities();
+        districtService.showCities(district7);
         System.out.println();
 
 

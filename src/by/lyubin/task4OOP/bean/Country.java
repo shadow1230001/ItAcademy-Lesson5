@@ -1,5 +1,7 @@
 package by.lyubin.task4OOP.bean;
 
+import by.lyubin.task4OOP.logic.CountryService;
+
 import java.util.Arrays;
 
 public class Country {
@@ -49,14 +51,6 @@ public class Country {
         this.districtNumbers = numberOfRegions;
     }
 
-    private double getArea() {
-        return districtCalcArea();
-    }
-
-    public String showArea() {
-        double area = districtCalcArea();
-        return " Area of " + this.name + " is " + area + " sqrt km ";
-    }
 
     public void addDistrict(District district) {
         if (districtCounter < districts.length) {
@@ -75,17 +69,7 @@ public class Country {
             System.out.format("%-15s %15s %25s %n", district.getName(), district.getDistrictCenter(), district.getArea());
         }
 
-        System.out.format("%-15s %15s %25s %n", "", "", "Total: " + getArea());
-    }
-
-    private double districtCalcArea() {
-        double total = 0;
-
-        for (District district : districts) {
-            total += district.getArea();
-        }
-
-        return total;
+        System.out.format("%-15s %15s %25s %n", "", "", "Total: " + (new CountryService()).getArea(this));
     }
 
     @Override
